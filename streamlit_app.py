@@ -20,6 +20,7 @@ with event:
     assister = st.selectbox("Selecciona al asistidor:", player_list)
 
 with fix_data:
+    st.markdown("Aquí deberemos corregir")
     
 
 
