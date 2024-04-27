@@ -9,11 +9,12 @@ event, fix_data = st.tabs(["Eventos", "Curación de datos"])
 
 team_list: list = ["Equipo A", "Equipo B"]
 players = {
-    "Equipo A": ["Hector", "Puma", "Hector"],
+    "Equipo A": ["Hector", "Puma", "Nepo"],
     "Equipo B": ["Peso Pluma", "Mirra", "Naim"]
 }
-events = []
+
 with event:
+    events = []
     team = st.selectbox("Selecciona al equipo:", team_list)
     player_list = players[team]
     player = st.selectbox("Selecciona al anotador:", player_list)
