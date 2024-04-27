@@ -17,7 +17,7 @@ with event:
     team = st.selectbox("Selecciona al equipo:", team_list)
     player_list = players[team]
     player = st.selectbox("Selecciona al anotador:", player_list)
-    assister = st.selectbox("Selecciona al asistidor:", player_list)
+    assister = st.selectbox("Selecciona al asistidor:", ["No hubo"].append(player_list))
 
 with fix_data:
     st.markdown("Aquí deberemos corregir")
