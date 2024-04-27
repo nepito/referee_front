@@ -21,7 +21,9 @@ with event:
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
     if st.button("Registrar evento"):
         events.append({"team": team, "player": player, "assister": assister})
+        b = [{"team": team, "player": player, "assister": assister}, *events]
         st.write(events)
+        st.write(b)
 
 with fix_data:
     st.markdown("Aquí deberemos corregir")
