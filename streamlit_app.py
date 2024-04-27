@@ -14,16 +14,17 @@ players = {
 }
 
 with event:
-    events = []
+    if 'events' not in st.session_state:
+        st.session_state.events = []
     team = st.selectbox("Selecciona al equipo:", team_list)
     player_list = players[team]
     player = st.selectbox("Selecciona al anotador:", player_list)
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
     if st.button("Registrar evento"):
-        events.append({"team": team, "player": player, "assister": assister})
-        b = [{"team": team, "player": player, "assister": assister}, *events]
+        st.session_state.events.append({"team": team, "player": player, "assister": assister})
+        #b = [{"team": team, "player": player, "assister": assister}, *events]
         st.write(events)
-        st.write(b)
+        #st.write(b)
 
 with fix_data:
     st.markdown("Aquí deberemos corregir")
