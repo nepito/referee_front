@@ -9,8 +9,8 @@ event, fix_data = st.tabs(["Eventos", "Curación de datos"])
 
 team_list: list = ["Equipo A", "Equipo B"]
 players = {
-    "Equipo A" = ["Hector", "Puma", "Hector"],
-    "Equipo B" = ["Peso Pluma", "Mirra", "Naim"]
+    "Equipo A": ["Hector", "Puma", "Hector"],
+    "Equipo B": ["Peso Pluma", "Mirra", "Naim"]
 }
 
 with event:
