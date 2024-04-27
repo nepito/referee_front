@@ -14,7 +14,7 @@ players = {
 }
 
 with event:
-    team = st.selectbox("Selecciona al equipo:", player_list)
+    team = st.selectbox("Selecciona al equipo:", team_list)
     player_list = players[team]
     player = st.selectbox("Selecciona al anotador:", player_list)
     assister = st.selectbox("Selecciona al asistidor:", player_list)
