@@ -18,9 +18,9 @@ with event:
     player_list = players[team]
     player = st.selectbox("Selecciona al anotador:", player_list)
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
-    if st.button("Registrar venta"):
+    if st.button("Registrar evento"):
         events =  events.append({"team": team, "player": player, "assister": assister})
-        print(events)
+        st.write(events)
 
 with fix_data:
     st.markdown("Aquí deberemos corregir")
