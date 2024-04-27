@@ -23,7 +23,7 @@ with event:
     if st.button("Registrar evento"):
         st.session_state.events.append({"team": team, "player": player, "assister": assister})
         #b = [{"team": team, "player": player, "assister": assister}, *events]
-        st.write(events)
+        st.write(st.session_state.events)
         #st.write(b)
 
 with fix_data:
