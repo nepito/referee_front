@@ -2,7 +2,7 @@
 src="https://raw.githubusercontent.com/niesfutbol/streamlit_nies/develop/static/logo_nies.png" align="right" width="256"
 /></a>
 
-# Template for Streamlit projects
+# Front for referee
 
 ## Step to use
 ### Local app
