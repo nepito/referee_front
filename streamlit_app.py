@@ -43,8 +43,8 @@ with event:
 
 with fix_data:
     st.markdown("Aquí deberemos corregir")
-
-    
+    events = pd.DataFrame.from_dict(st.session_state.events)
+    edited_df = st.data_editor(events, num_rows="dynamic")
 
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
