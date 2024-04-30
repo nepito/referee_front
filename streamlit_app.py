@@ -22,9 +22,10 @@ def get_players_from_match(fixture):
         }
 
 with event:
-    start_time = time.time()
     fixture = st.selectbox("Selecciona el partido:", list(matches.keys()))
     players = get_players_from_match(fixture)
+    if 'start_time' not in st.session_state:
+        st.session_state.start_time = time.time()
     if 'events' not in st.session_state:
         st.session_state.events = []
     team_list = list(players.keys())
@@ -33,7 +34,7 @@ with event:
     player = st.selectbox("Selecciona al anotador:", [*player_list, "Otro"])
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", "Otro", *player_list])
     if st.button("Registrar evento"):
-        secs = time.time() - start_time
+        secs = time.time() - st.session_state.start_time
         st.session_state.events.append(
             {"team": team, "player": player, "assister": assister, "match": fixture, "time": secs}
             )
