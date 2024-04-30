@@ -12,7 +12,7 @@ matches = {
     "Backpack Boyz vs Kingstone": ["Backpack Boyz", "Kingstone"],
     "Troncos vs Mesebrios": ["Troncos FC", "Mesebrios"]
 }
-jugadores = pd.read_csv("/workdir/tests/data/jugadores.csv")
+jugadores = pd.read_csv("./tests/data/jugadores.csv")
 team_list: list = ["Equipo A", "Equipo B"]
 def get_players_from_match(fixture):
     teams = matches[fixture]
