@@ -41,6 +41,7 @@ with event:
     player = st.selectbox("Selecciona al anotador:", player_list)
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
     if st.button("Registrar evento"):
+        time.sleep(1)
         secs = time.time() - start_time
         st.session_state.events.append(
             {"team": team, "player": player, "assister": assister, "match": fixture, "time": secs}
