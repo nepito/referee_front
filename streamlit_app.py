@@ -27,6 +27,9 @@ players = {
 }
 
 with event:
+    N = 20*60
+    for secs in range(0,N):
+        mm, ss = secs//60, secs%60
     fixture = st.selectbox("Selecciona el partido:", list(matches.keys()))
     players = get_players_from_match(fixture)
     if 'events' not in st.session_state:
@@ -37,7 +40,9 @@ with event:
     player = st.selectbox("Selecciona al anotador:", player_list)
     assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
     if st.button("Registrar evento"):
-        st.session_state.events.append({"team": team, "player": player, "assister": assister})
+        st.session_state.events.append(
+            {"team": team, "player": player, "assister": assister, "match": fixture, "time": secs}
+            )
         st.write(st.session_state.events)
 
 
