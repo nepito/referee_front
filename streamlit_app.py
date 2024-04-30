@@ -29,11 +29,12 @@ players = {
 
 ph = st.empty()
 with event:
-    N = 20*60
-    for secs in range(0,N):
-        mm, ss = secs//60, secs%60
-        ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
-        time.sleep(1)
+    #N = 20*60
+    #for secs in range(0,N):
+    #    mm, ss = secs//60, secs%60
+    #    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
+    #    time.sleep(1)
+    secs = 27
     fixture = st.selectbox("Selecciona el partido:", list(matches.keys()))
     players = get_players_from_match(fixture)
     if 'events' not in st.session_state:
