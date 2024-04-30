@@ -29,8 +29,8 @@ with event:
     team_list = list(players.keys())
     team = st.selectbox("Selecciona al equipo:", team_list)
     player_list = players[team]
-    player = st.selectbox("Selecciona al anotador:", player_list)
-    assister = st.selectbox("Selecciona al asistidor:", ["No hubo", *player_list])
+    player = st.selectbox("Selecciona al anotador:", [*player_list, "Otro"])
+    assister = st.selectbox("Selecciona al asistidor:", ["No hubo", "Otro", *player_list])
     if st.button("Registrar evento"):
         start_time = time.time()
         time.sleep(3)
