@@ -14,7 +14,6 @@ matches = {
     "Troncos vs Mesebrios": ["Troncos FC", "Mesebrios"]
 }
 jugadores = pd.read_csv("./tests/data/jugadores.csv")
-team_list: list = ["Equipo A", "Equipo B"]
 def get_players_from_match(fixture):
     teams = matches[fixture]
     return {
@@ -22,21 +21,7 @@ def get_players_from_match(fixture):
         teams[1]: list(jugadores[jugadores.equipo == teams[1]].jugador)
         }
 
-players = {
-    "Equipo A": ["Hector", "Puma", "Nepo"],
-    "Equipo B": ["Peso Pluma", "Mirra", "Naim"]
-}
-
-
-ph = st.empty()
-N = 5*60
-for secs in range(N,0,-1):
-    mm, ss = secs//60, secs%60
-    ph.metric("Countdown", f"{mm:02d}:{ss:02d}")
-    time.sleep(1)
 with event:
-    start_time = time.time()
-    secs = 27
     fixture = st.selectbox("Selecciona el partido:", list(matches.keys()))
     players = get_players_from_match(fixture)
     if 'start_time' not in st.session_state:
